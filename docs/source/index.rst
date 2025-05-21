@@ -8,6 +8,7 @@ Bienvenue dans la documentation technique complète du projet **Image to Sketch 
    :caption: Table des matières
 
    introduction
+   guide_utilisateur
    architecture
    preparation
    entrainement
