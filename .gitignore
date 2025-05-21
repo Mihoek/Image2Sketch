@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.idea/
+.vscode/
+*.jpg
+*.png
+# Supprimez les deux lignes ci-dessus si vous voulez inclure les images
+
+
