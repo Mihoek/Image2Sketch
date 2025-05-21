@@ -1,0 +1,22 @@
+# .readthedocs.yml
+
+version: 2
+
+# Indique la version de la config (toujours mettre 2)
+
+sphinx:
+  configuration: docs/source/conf.py
+
+# Chemin vers ton fichier conf.py de Sphinx (ici il est dans docs/source/)
+
+build:
+  image: latest  # Utilise la dernière image Docker ReadTheDocs (avec Python 3.11+)
+  tools:
+    python: "3.11"  # Version de Python utilisée pour la construction
+
+python:
+  install:
+    - method: pip
+      path: .
+    - requirements: docs/requirements.txt
+
