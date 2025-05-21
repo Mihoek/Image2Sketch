@@ -5,4 +5,4 @@ Références et ressources
 - Documentation TensorFlow: https://www.tensorflow.org/api_docs
 - Documentation Streamlit: https://docs.streamlit.io/
 - Dataset edge2real: https://www.kaggle.com/datasets/ (Lien spécifique si possible)
-- Code source: https://github.com/ton_projet/image-to-sketch-transformer
+- Code source: https://github.com/Mihoek/Image2Sketch
