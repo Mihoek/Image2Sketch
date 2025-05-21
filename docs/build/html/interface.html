@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interface utilisateur &#8212; y Image2Sketch documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=65703296"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API et intégration" href="api_integration.html" />
+    <link rel="prev" title="Entraînement du modèle" href="entrainement.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="interface-utilisateur">
+<h1>Interface utilisateur<a class="headerlink" href="#interface-utilisateur" title="Link to this heading">¶</a></h1>
+<p>L’interface utilisateur est construite avec Streamlit, offrant une expérience web interactive et réactive.</p>
+<section id="fonctionnalites-de-l-interface">
+<h2>Fonctionnalités de l’interface<a class="headerlink" href="#fonctionnalites-de-l-interface" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Téléchargement d’image</strong>: Les utilisateurs peuvent télécharger une image depuis leur appareil</p></li>
+<li><p><strong>Capture webcam</strong>: Prise de photo en direct via la caméra</p></li>
+<li><p><strong>Effets</strong>: Plusieurs options de post-traitement sont disponibles
+- Normal: Croquis standard
+- Contraste élevé: Utilise CLAHE pour améliorer le contraste
+- Adouci: Applique un flou gaussien pour des lignes plus douces
+- Net: Applique un filtre de netteté pour des détails plus précis</p></li>
+<li><p><strong>Téléchargement</strong>: Les utilisateurs peuvent télécharger le croquis généré</p></li>
+</ul>
+</section>
+<section id="structure-du-code">
+<h2>Structure du code<a class="headerlink" href="#structure-du-code" title="Link to this heading">¶</a></h2>
+<p>Le script Streamlit (<code class="docutils literal notranslate"><span class="pre">Stremlitapp.py</span></code>) est organisé selon le flux suivant:</p>
+<ol class="arabic simple">
+<li><p>Configuration et mise en page</p></li>
+<li><p>Chargement du modèle</p></li>
+<li><p>Fonctions de prétraitement et de génération</p></li>
+<li><p>Interface d’upload et de capture</p></li>
+<li><p>Traitement et génération du croquis</p></li>
+<li><p>Options de téléchargement</p></li>
+<li><p>Informations supplémentaires</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">y</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture du modèle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrainement.html">Entraînement du modèle</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Interface utilisateur</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnalites-de-l-interface">Fonctionnalités de l’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure-du-code">Structure du code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_integration.html">API et intégration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Dépannage et FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Références et ressources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="entrainement.html" title="previous chapter">Entraînement du modèle</a></li>
+      <li>Next: <a href="api_integration.html" title="next chapter">API et intégration</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Miheok.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/interface.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

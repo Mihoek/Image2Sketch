@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Architecture du modèle &#8212; y Image2Sketch documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=65703296"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Entraînement du modèle" href="entrainement.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="architecture-du-modele">
+<h1>Architecture du modèle<a class="headerlink" href="#architecture-du-modele" title="Link to this heading">¶</a></h1>
+<section id="vue-d-ensemble">
+<h2>Vue d’ensemble<a class="headerlink" href="#vue-d-ensemble" title="Link to this heading">¶</a></h2>
+<p>Le projet utilise une architecture U-Net, qui est particulièrement adaptée aux tâches de segmentation d’image et de génération de contenu visuel. Cette architecture se caractérise par:</p>
+<ul class="simple">
+<li><p>Une partie encodeur qui capture le contexte</p></li>
+<li><p>Une partie décodeur qui permet une localisation précise</p></li>
+<li><p>Des connexions de type “skip” entre l’encodeur et le décodeur</p></li>
+</ul>
+</section>
+<section id="structure-detaillee">
+<h2>Structure détaillée<a class="headerlink" href="#structure-detaillee" title="Link to this heading">¶</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Inputs (256×256×3)
+│
+├── Encoder
+│   ├── Conv1 (64 filtres)
+│   │   └── MaxPool1
+│   ├── Conv2 (128 filtres)
+│   │   └── MaxPool2
+│   └── Conv3 (256 filtres)
+│       └── MaxPool3
+│
+├── Bridge
+│   ├── Conv4 (512 filtres)
+│   └── Dropout (0.5)
+│
+└── Decoder
+    ├── UpSample1 + Concat avec Conv3
+    │   └── Conv5 (256 filtres)
+    ├── UpSample2 + Concat avec Conv2
+    │   └── Conv6 (128 filtres)
+    ├── UpSample3 + Concat avec Conv1
+    │   └── Conv7 (64 filtres)
+    └── Output (1 filtre, activation sigmoid)
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">y</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture du modèle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vue-d-ensemble">Vue d’ensemble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure-detaillee">Structure détaillée</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="entrainement.html">Entraînement du modèle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interface utilisateur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_integration.html">API et intégration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Dépannage et FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Références et ressources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="entrainement.html" title="next chapter">Entraînement du modèle</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Miheok.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/architecture.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
